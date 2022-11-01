@@ -1,0 +1,499 @@
+/*
+  CSS resets, rem setting
+*/
+html {
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    color: white;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/* body & header */
+body {
+    background: url('./images/Background.png') no-repeat 55vw 0vh, linear-gradient(60deg, #029acc, #83ceba);
+    min-height: 100vh;
+}
+
+header {
+    height: 56px;
+}
+
+/* main page contents */
+main.container {
+    /* specify child width and margin 0 auto to center horizontally within parent */
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* inputs */
+div.input__main-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+div.input__main-container div.input__error-message {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #d30000;
+    margin-left: 1.75rem;
+}
+
+div.input__container {
+    display: flex;
+    font-size: 1.25rem;
+    width: 100%;
+}
+
+label.input__label {
+    font-size: 1.25rem;
+}
+
+label.input__label--disabled {
+    color: #efefef;
+}
+
+span.input__label--required {
+    color: #d00000;
+    margin-left: 0.25rem;
+}
+
+/* input text, date */
+input[type='text'].text-input,
+input[type='date'].text-input,
+input[type='password'].text-input,
+textarea.textarea-input {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    display: inline-block;
+    border: 2px solid #d8d8d8;
+    border-radius: 4px;
+}
+
+textarea.textarea-input {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+input[type='text'].text-input:active,
+input[type='text'].text-input:focus,
+input[type='date'].text-input:active,
+input[type='date'].text-input:focus,
+input[type='password'].text-input:active,
+input[type='password'].text-input:focus,
+textarea.textarea-input:active,
+textarea.textarea-input:focus {
+    outline: none;
+    box-shadow: 0 0 4px white;
+}
+
+input[type='text'].text-input__error,
+input[type='date'].text-input__error,
+input[type='password'].text-input__error,
+div.select-input.select-input__error,
+textarea.textarea-input__error {
+    border: 3px solid #ff3300;
+}
+
+input[type='text'].text-input__error:active,
+input[type='text'].text-input__error:focus,
+div.select-input.select-input__error:focus-within {
+    outline: none;
+    box-shadow: 0 0 4px #ff3300;
+}
+
+/* input select */
+div.select-input select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: white;
+    background-image: none;
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+div.select-input select::-ms-expand {
+    display: none;
+}
+
+div.select-input select:disabled {
+    background-color: rgba(239, 239, 239, 0.65);
+}
+
+/* input radio */
+input[type='radio'] {
+    background-color: transparent;
+    border: 0.0625rem solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 1.25rem;
+    outline: none;
+    width: 1.25rem;
+    margin-right: 0.75rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type='radio']:checked {
+    background-color: white;
+    box-shadow: inset 0 0 0.0625rem 0.0625rem #029acc;
+    -webkit-transition: background 0.15s, box-shadow 0.1s;
+    transition: background 0.15s, box-shadow 0.1s;
+}
+
+div.radio-input {
+    display: flex;
+    width: 100%;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+div.radio-input label {
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.radio-input.radio-input__error input[type='radio'] {
+    border-color: #ff3300;
+}
+
+/* select input */
+div.select-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #d8d8d8;
+    border-radius: 4px;
+}
+
+div.select-input:active,
+div.select-input:focus,
+div.select-input:focus-within {
+    outline: none;
+    box-shadow: 0 0 4px white;
+}
+
+/* 
+  up pointing arrow \02C4 
+  down pointing arrow \02C5
+*/
+
+div.select-input::after {
+    content: '\02C5';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem 0.9rem;
+    color: #bebebe;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+/* checkbox */
+div.checkbox-input {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+    height: 3rem;
+    cursor: pointer;
+}
+
+div.checkbox-input input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    font: inherit;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.125rem solid #d8d8d8;
+    border-radius: 0.15rem;
+    margin-top: 0.25em;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+div.checkbox-input.checkbox__error input[type='checkbox'] {
+    border: 0.125rem solid #ff3300;
+}
+
+div.checkbox-input.checkbox__disabled {
+    opacity: 0.7;
+}
+
+div.checkbox-input.checkbox__disabled label.checkbox__label {
+    color: #efefef;
+}
+
+div.checkbox-input input[type='checkbox']::before {
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem #1aa71a;
+}
+
+div.checkbox-input label.checkbox__label {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+div.checkbox-input input[type='checkbox']:checked::before {
+    transform: scale(1);
+}
+
+/* file input */
+label.input-file--label {
+    border: 2px solid #d8d8d8;
+    height: 3rem;
+    min-width: 5rem;
+    font-size: 1.25rem;
+    padding: 0rem 2rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label.input-file--label.input-file--label__error {
+    border-color: #ff3300;
+}
+
+label.input-file--label.input-file--label__disabled {
+    opacity: 0.7;
+}
+
+div.input__container input[type='file'] {
+    display: none;
+}
+
+div.input__container span.input-file--filename {
+    margin-left: 2rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* form */
+section.form--container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+}
+h1.form--title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h2.form--subtitle {
+    font-size: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+    margin-bottom: 1.5rem;
+}
+
+.form-row__no-margin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.form-row--label {
+    min-width: 220px;
+    margin-top: 14px;
+}
+
+.form-row--inputs {
+    flex-grow: 1;
+    column-gap: 1.5rem;
+}
+
+/* form submit button */
+form div.form--submit-section {
+    border-top: 2px solid white;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+form div.form--submit-button {
+    width: 250px;
+    height: 4rem;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form div.form--submit-button.form--submit-button__cancel-pending {
+    border-color: #886a0f;
+    color: #886a0f;
+}
+
+form div.form--submit-section div.form--message {
+    display: none;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    margin-left: 3rem;
+}
+form div.form--submit-section div.form--message__warning {
+    color: #664d03;
+    background-color: #fff3cd;
+    border: 1px solid #fff3cd;
+    border-radius: 4px;
+    display: flex;
+}
+
+form div.form--submit-section div.form--message__error {
+    color: #842029;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    border-radius: 4px;
+    display: flex;
+}
+
+form div.form--submit-section div.form--message__success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+    border-radius: 4px;
+    display: flex;
+}
+
+/* make design responsive */
+@media only screen and (max-width: 1600px) {
+    main.container {
+        max-width: 1050px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    main.container {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    main.container {
+        max-width: 768px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        height: 36px;
+    }
+
+    main.container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    header {
+        height: 18px;
+    }
+
+    body {
+        background: url('./images/Background.png') no-repeat 45vw 0vh, linear-gradient(60deg, #029acc, #83ceba);
+    }
+
+    main.container {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+
+    h1.form--title {
+        margin-bottom: 1rem;
+    }
+
+    h2.form--subtitle {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .form-row--label {
+        margin: 6px 0px;
+    }
+
+    .form-row--inputs {
+        flex-direction: column;
+    }
+
+    .form-row--inputs .input__main-container {
+        margin-bottom: 0.5rem;
+    }
+
+    form div.form--submit-button {
+        width: 140px;
+        font-size: 1.25rem;
+    }
+
+    form div.form--submit-section div.form--message {
+        margin-left: 1rem;
+        font-size: 1.25rem;
+    }
+}

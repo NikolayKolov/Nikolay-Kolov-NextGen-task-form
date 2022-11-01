@@ -1,0 +1,83 @@
+{
+    "fName": {
+        "id": "fName",
+        "description": "firstName",
+        "type": "text",
+        "required": true
+    },
+    "lName": {
+        "id": "lName",
+        "description": "lastName",
+        "type": "text",
+        "required": true
+    },
+    "email": {
+        "id": "email",
+        "description": "eMail",
+        "type": "text",
+        "required": true,
+        "backEndValidation": true
+    },
+    "uName": {
+        "id": "uName",
+        "description": "userName",
+        "type": "text",
+        "required": true,
+        "backEndValidation": true
+    },
+    "uDesc": {
+        "id": "uDesc",
+        "description": "userProfileDescription",
+        "type": "text",
+        "required": true
+    },
+    "uPict": {
+        "id": "uPict",
+        "description": "userProfileImage",
+        "type": "file",
+        "required": true
+    },
+    "pWord": {
+        "id": "pWord",
+        "description": "userPassword",
+        "type": "password",
+        "required": true
+    },
+    "pWRetype": {
+        "id": "pWRetype",
+        "description": "passwordRetype",
+        "type": "password",
+        "required": true
+    },
+    "race": {
+        "id": "race",
+        "description": "userRace",
+        "type": "text",
+        "required": true
+    },
+    "gender": {
+        "id": "gender",
+        "description": "userGender",
+        "type": "text",
+        "required": true
+    },
+    "bDate": {
+        "id": "bDate",
+        "description": "userBirthDate",
+        "type": "date",
+        "required": true,
+        "backEndValidation": true
+    },
+    "dataCollBasic": {
+        "id": "dataCollBasic",
+        "description": "dataCollectionBasicUserConfirm",
+        "type": "boolean",
+        "required": true
+    },
+    "dataCollExt": {
+        "id": "dataCollExt",
+        "description": "dataCollectionExtendedUserConfirm",
+        "type": "boolean",
+        "required": false
+    }
+}
