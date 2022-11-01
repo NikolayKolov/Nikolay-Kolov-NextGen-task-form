@@ -31,10 +31,11 @@ const InputCheckbox: React.FC<IInputCheckBox> = (props) => {
         }
     };
 
+    // Don't pass label to the InputField component, it is needed to custom handle the label in this component
     return (
         <InputField
             id={id}
-            label={label}
+            label={undefined}
             disabled={disabled}
             required={required}
             errorMessage={errorMessage}
