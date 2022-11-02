@@ -169,8 +169,8 @@ const RegistrationForm: React.FC<{}> = () => {
             },
         }));
 
-        // if we change password and password retype is invalid, check to see if it now matches the new password
-        if (forId === pWord && resultValidateField.isValid && formData[pWRetype].isValid === false) {
+        // if we change password and password retype is not empty, check to see if it now matches the new password
+        if (forId === pWord && formData[pWRetype].isValid !== undefined) {
             let resultValidateRetypePassword = validateFieldFrontEnd(pWRetype, formData[pWRetype].value, {
                 [pWord]: forIdValue,
             });
